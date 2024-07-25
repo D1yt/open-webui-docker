@@ -9,6 +9,8 @@ services:
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
 
   tika:
+    container_name: tika
+    restart: on-failure
     image: apache/tika:latest-full
 
   open-webui:
@@ -23,6 +25,7 @@ services:
       - open-webui:/app/backend/data
     depends_on:
       - ollama
+      - tika
     ports:
       - ${OPEN_WEBUI_PORT-3000}:8080
     environment:
