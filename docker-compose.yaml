@@ -32,6 +32,10 @@ services:
       - 'OLLAMA_BASE_URL=http://ollama:11434'
       - 'WEBUI_SECRET_KEY='
       - 'TEXT_EXTRACTION_ENGINE=tika'
+      - 'RAG_EMBEDDING_MODEL_AUTO_UPDATE=True'
+      - 'RAG_RERANKING_MODEL_AUTO_UPDATE=True'
+      - 'RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE=True'
+      - 'RAG_RERANKING_MODEL_TRUST_REMOTE_CODE=True'
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
