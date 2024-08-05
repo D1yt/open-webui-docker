@@ -36,8 +36,6 @@ services:
       - 'RAG_RERANKING_MODEL_AUTO_UPDATE=True'
       - 'RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE=True'
       - 'RAG_RERANKING_MODEL_TRUST_REMOTE_CODE=True'
-      - 'local_files_only=False'
-      # does the last flag even do sth?
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
