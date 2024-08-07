@@ -9,3 +9,15 @@ services:
               count: all
               capabilities:
                 - gpu
+
+  open-webui:
+    # GPU support
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
+                
